@@ -16,6 +16,8 @@ typedef void Func;
 typedef void function;
 typedef void Function;
 
+// #define void ERROR_VOID
+
 #define null ((fn*)0)
 #define Null ((fn*)0)
 

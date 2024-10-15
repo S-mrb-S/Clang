@@ -3,16 +3,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+// ---------------------------------------------------
+// Global type
 typedef int Int;
 
-// Voids
 typedef void fn;
-typedef void Fn;
-typedef void func;
-typedef void Func;
-typedef void function;
-typedef void Function;
 
+// ---------------------------------------------------
+// #define void ERROR_VOID
+
+// Global macros
 #define null ((fn*)0)
 #define Null ((fn*)0)
 
