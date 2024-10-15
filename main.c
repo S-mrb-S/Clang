@@ -12,16 +12,6 @@
 #define PORT 8585
 #define BUFFER_SIZE 1024
 
-fn error(const char *msg)
-{
-    perror(msg);
-    exit(1);
-}
-fn panic(const char *message) {
-    fprintf(stderr, "Panic: %sn", message);
-    exit(EXIT_FAILURE); // یا می‌توانید از abort() استفاده کنید
-}
-
 Int main()
 {
     Int server_fd = 0;

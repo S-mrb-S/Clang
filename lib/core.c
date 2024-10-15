@@ -1,3 +1,5 @@
+// core.c
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -47,26 +49,37 @@ fn free_all(MemoryManager *manager) {
     manager->count = 0;  // Reset count after freeing
 }
 
-int main() {
-    MemoryManager manager = { .count = 0 };
-
-    Int(arr1, 10);   
-    Int(arr2, 5);   
-    Double(arr3, 3);
-
-    if (arr1 == null || arr2 == null || arr3 == null) {
-        fprintf(stderr, "Failed to allocate memory\n");
-        FREE_ALL(&manager);
-        return EXIT_FAILURE;
-    }
-
-    for (int i = 0; i < 10; i++) {
-        arr1[i] = i * 10;
-        printf("%d ", arr1[i]);
-    }
-    printf("\n");
-
-    FREE_ALL(&manager);
-
-    return EXIT_SUCCESS;
+fn error(const char *msg)
+{
+    perror(msg);
+    exit(1);
 }
+
+fn panic(const char *message) {
+    fprintf(stderr, "Panic: %sn", message);
+    exit(EXIT_FAILURE); // یا می‌توانید از abort() استفاده کنید
+}
+
+// int main() {
+//     MemoryManager manager = { .count = 0 };
+
+//     Int(arr1, 10);   
+//     Int(arr2, 5);   
+//     Double(arr3, 3);
+
+//     if (arr1 == null || arr2 == null || arr3 == null) {
+//         fprintf(stderr, "Failed to allocate memory\n");
+//         FREE_ALL(&manager);
+//         return EXIT_FAILURE;
+//     }
+
+//     for (int i = 0; i < 10; i++) {
+//         arr1[i] = i * 10;
+//         printf("%d ", arr1[i]);
+//     }
+//     printf("\n");
+
+//     FREE_ALL(&manager);
+
+//     return EXIT_SUCCESS;
+// }
