@@ -1,3 +1,6 @@
+
+#include "lib/core.h"
+
 #include <netinet/in.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,12 +11,6 @@
 
 #define PORT 8585
 #define BUFFER_SIZE 1024
-
-typedef int Int;
-typedef void fn;
-
-#define void fn;
-#define null ((fn*)0)
 
 fn error(const char *msg)
 {
